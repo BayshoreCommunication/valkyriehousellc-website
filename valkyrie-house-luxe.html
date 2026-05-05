@@ -1366,12 +1366,150 @@
         letter-spacing: 0.05em;
       }
       @media (max-width: 768px) {
+        .hero {
+          min-height: auto;
+          padding: 120px 22px 78px;
+        }
+        .hero-logo {
+          width: 170px;
+          margin-bottom: 26px;
+        }
+        .hero-eyebrow {
+          letter-spacing: 0.24em;
+          gap: 10px;
+          font-size: 9px;
+          margin-bottom: 24px;
+        }
+        .hero p.lede {
+          margin-bottom: 34px;
+          line-height: 1.65;
+        }
+        .scroll-indicator {
+          display: none;
+        }
+        .btn {
+          width: 100%;
+          justify-content: center;
+          padding: 15px 22px;
+          letter-spacing: 0.18em;
+          font-size: 10px;
+        }
+        .hero-cta-row {
+          width: 100%;
+          display: grid;
+          gap: 12px;
+        }
+        .quote-strip {
+          padding: 78px 22px;
+        }
+        .quote-strip::before {
+          font-size: 280px;
+          top: -65px;
+        }
+        .section-sub {
+          font-size: 17px;
+          margin-bottom: 42px;
+        }
+        .problem-card {
+          padding: 38px 18px;
+        }
+        .gallery-item .label {
+          left: 20px;
+          right: 20px;
+          bottom: 20px;
+          letter-spacing: 0.18em;
+        }
+        .gallery-item .label span {
+          font-size: 18px;
+        }
+        .cta-section {
+          padding: 115px 22px;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 34px;
+        }
+        .form-card {
+          padding: 36px 24px;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .contact-value {
+          font-size: 17px;
+        }
+        .nav-logo img {
+          width: 110px !important;
+        }
+        .footer-brand .footer-logo img {
+          width: 120px !important;
+        }
         .footer-grid {
           grid-template-columns: 1fr;
           gap: 40px;
         }
         section {
           padding: 80px 22px;
+        }
+      }
+      @media (max-width: 480px) {
+        nav,
+        nav.scrolled {
+          padding: 12px 14px;
+        }
+        .nav-cta {
+          padding: 9px 14px;
+          font-size: 9px;
+          letter-spacing: 0.12em;
+        }
+        .hero {
+          padding: 108px 16px 66px;
+        }
+        .hero h1 {
+          font-size: clamp(30px, 9vw, 42px);
+          margin-bottom: 22px;
+        }
+        .hero p.lede {
+          font-size: 16px;
+        }
+        .section-eyebrow {
+          letter-spacing: 0.24em;
+          gap: 10px;
+        }
+        .section-title {
+          font-size: clamp(28px, 8.2vw, 36px);
+        }
+        .mv-card,
+        .split-content,
+        .service,
+        .form-card {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+        .split-image {
+          min-height: 280px;
+        }
+        .problem-grid,
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+        .problem-card {
+          border-right: none;
+          border-bottom: 1px solid var(--line);
+        }
+        .problem-card:last-child {
+          border-bottom: none;
+        }
+        .process-steps {
+          gap: 36px;
+        }
+        .cta-section p {
+          font-size: 17px;
+        }
+        .footer-legal {
+          font-size: 10px;
+          gap: 8px;
         }
       }
     </style>
@@ -2168,7 +2306,7 @@
           emailjs
             .sendForm(
               "service_yuo8t9n", // ← Dashboard → Email Services → Service ID
-              "template_rpi2kkg", // ← Dashboard → Email Templates → Template ID
+              "template_1x5bhgd", // ← Dashboard → Email Templates → Template ID
               this, // the <form> element — passes all name="…" fields automatically
             )
             .then(() => {
