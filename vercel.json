@@ -1,0 +1,5 @@
+{
+  "routes": [
+    { "src": "/", "dest": "/valkyrie-house-luxe.html" }
+  ]
+}
