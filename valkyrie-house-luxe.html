@@ -674,6 +674,10 @@
         grid-template-columns: 1fr 1fr;
         min-height: 640px;
       }
+      .split.founder-split {
+        min-height: auto;
+        align-items: stretch;
+      }
       .split.reverse {
         direction: rtl;
       }
@@ -691,6 +695,10 @@
         background-repeat: no-repeat;
         background-position: center;
         background-color: var(--black);
+      }
+      .founder-split .split-image {
+        height: 100%;
+        min-height: 0;
       }
       .split-image::after {
         content: "";
@@ -795,6 +803,11 @@
         }
         .split-image {
           min-height: 380px;
+        }
+        .founder-split .split-image {
+          height: auto;
+          min-height: 0;
+          aspect-ratio: 4 / 3;
         }
         .split-content {
           padding: 70px 32px;
@@ -1527,6 +1540,11 @@
         .split-image {
           min-height: 280px;
         }
+        .founder-split .split-image {
+          height: auto;
+          min-height: 0;
+          aspect-ratio: 4 / 3;
+        }
         .split-content .signature {
           gap: 14px;
           font-size: 22px;
@@ -1828,7 +1846,7 @@
     </section>
 
     <section class="split-section">
-      <div class="split">
+      <div class="split founder-split">
         <div
           class="split-image full-image"
           style="
