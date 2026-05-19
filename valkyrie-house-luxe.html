@@ -255,7 +255,7 @@
       .hero-bg {
         position: absolute;
         inset: 0;
-        background-image: url("https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=1800&q=80");
+        background-image: url("https://bayshore.nyc3.cdn.digitaloceanspaces.com/valkyrie_house/WhatsApp%20Image%202026-05-19%20at%205.43.42%20PM.jpeg");
         background-size: cover;
         background-position: center;
         filter: grayscale(100%) brightness(0.32) contrast(1.1);
@@ -751,10 +751,30 @@
       }
       .split-content .signature {
         margin-top: 36px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
         font-family: var(--serif);
         font-style: italic;
         font-size: 24px;
         color: var(--pink);
+      }
+      .split-content .signature + .signature {
+        margin-top: 28px;
+      }
+      .split-content .signature-avatar {
+        width: 72px;
+        height: 72px;
+        flex: 0 0 72px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+        border: 1px solid rgba(232, 164, 197, 0.55);
+        box-shadow: 0 0 0 4px rgba(232, 164, 197, 0.08);
+        filter: grayscale(100%) brightness(0.9) contrast(1.08);
+      }
+      .split-content .signature-copy {
+        min-width: 0;
       }
       .split-content .signature span {
         display: block;
@@ -778,6 +798,11 @@
         }
         .split-content {
           padding: 70px 32px;
+        }
+        .split-content .signature-avatar {
+          width: 64px;
+          height: 64px;
+          flex-basis: 64px;
         }
       }
       .problem-section {
@@ -1502,6 +1527,20 @@
         .split-image {
           min-height: 280px;
         }
+        .split-content .signature {
+          gap: 14px;
+          font-size: 22px;
+        }
+        .split-content .signature-avatar {
+          width: 58px;
+          height: 58px;
+          flex-basis: 58px;
+        }
+        .split-content .signature span {
+          font-size: 9px;
+          line-height: 1.7;
+          letter-spacing: 0.22em;
+        }
         .problem-grid,
         .gallery {
           grid-template-columns: 1fr;
@@ -1816,11 +1855,26 @@
             environment where you feel seen, understood, and empowered to heal.
           </p>
           <div class="signature">
-            Linda George
-            <span>Founder · Valkyrie House, LLC</span>
+            <img
+              class="signature-avatar"
+              src="https://bayshore.nyc3.cdn.digitaloceanspaces.com/valkyrie_house/DSC01496.JPG"
+              alt="Linda George"
+            />
+            <div class="signature-copy">
+              Linda George
+              <span>Founder · Valkyrie House, LLC</span>
+            </div>
           </div>
           <div class="signature">
-            Tripathi Vongsyprasom<span>Co Founder · Valkyrie House, LLC</span>
+            <img
+              class="signature-avatar"
+              src="https://bayshore.nyc3.cdn.digitaloceanspaces.com/valkyrie_house/Trip%20Website%204.png"
+              alt="Hardam Tripathi"
+            />
+            <div class="signature-copy">
+              Hardam Tripathi
+              <span>Co Founder · Valkyrie House, LLC</span>
+            </div>
           </div>
         </div>
       </div>
@@ -2050,7 +2104,7 @@
         <div
           class="gallery-item"
           style="
-            background-image: url(&quot;https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&q=80&quot;);
+            background-image: url(&quot;https://bayshore.nyc3.cdn.digitaloceanspaces.com/Email_Template/WhatsApp%20Image%202026-05-06%20at%2011.44.37%20AM.jpeg&quot;);
           "
         >
           <div class="label">
