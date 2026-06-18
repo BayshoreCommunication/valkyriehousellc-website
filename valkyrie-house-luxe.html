@@ -43,16 +43,16 @@
     />
 
     <!-- ====================================================
-         EmailJS SDK
+         EmailJS SDK v4
     ==================================================== -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
       // -----------------------------------------------
-      // EmailJS Initialization
-      // আপনার Public Key এখানে বসান
-      // Dashboard → Account → General → Public Key
+      // EmailJS v4 Initialization — object syntax required
       // -----------------------------------------------
-      emailjs.init("yMYJ4ICVXc1mL1gDa"); // ← এখানে আপনার Public Key বসান
+      emailjs.init({
+        publicKey: "yMYJ4ICVXc1mL1gDa",
+      });
     </script>
 
     <style>
@@ -2233,11 +2233,6 @@
                   >Info@valkyriehouse.com</a
                 >
               </div>
-              <!-- <div class="contact-value">
-                <a href="mailto:Trip@valkyriehousellc.com"
-                  >Trip@valkyriehousellc.com</a
-                >
-              </div> -->
             </div>
             <div class="contact-detail reveal delay-2">
               <div class="contact-label">Location</div>
@@ -2254,27 +2249,27 @@
 
           <div class="form-card reveal delay-1">
             <!-- ================================================
-                 APPLICATION FORM — EmailJS Integration
+                 APPLICATION FORM — EmailJS v4 Integration
                  ================================================ -->
             <form id="applicationForm">
               <div class="form-row">
                 <div>
                   <label for="fname">First Name</label>
-                  <!-- EmailJS template variable: {{from_first_name}} -->
                   <input
                     type="text"
                     id="fname"
                     name="from_first_name"
+                    placeholder="Jane"
                     required
                   />
                 </div>
                 <div>
                   <label for="lname">Last Name</label>
-                  <!-- EmailJS template variable: {{from_last_name}} -->
                   <input
                     type="text"
                     id="lname"
                     name="from_last_name"
+                    placeholder="Smith"
                     required
                   />
                 </div>
@@ -2282,18 +2277,27 @@
               <div class="form-row">
                 <div>
                   <label for="email">Email</label>
-                  <!-- EmailJS template variable: {{reply_to}} -->
-                  <input type="email" id="email" name="reply_to" required />
+                  <input
+                    type="email"
+                    id="email"
+                    name="applicant_email"
+                    placeholder="you@example.com"
+                    required
+                  />
                 </div>
                 <div>
                   <label for="phone">Phone</label>
-                  <!-- EmailJS template variable: {{phone}} -->
-                  <input type="tel" id="phone" name="phone" required />
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="(813) 000-0000"
+                    required
+                  />
                 </div>
               </div>
               <div>
                 <label for="referral">I am being referred from</label>
-                <!-- EmailJS template variable: {{referral}} -->
                 <input
                   type="text"
                   id="referral"
@@ -2303,7 +2307,6 @@
               </div>
               <div>
                 <label for="message">Tell us a little about yourself</label>
-                <!-- EmailJS template variable: {{message}} -->
                 <textarea
                   id="message"
                   name="message"
@@ -2316,7 +2319,7 @@
                 </button>
               </div>
 
-              <!-- Status message (shown after submission) -->
+              <!-- Status message shown after submission -->
               <div class="form-status" id="formStatus"></div>
             </form>
           </div>
@@ -2384,7 +2387,7 @@
       );
       reveals.forEach((r) => io.observe(r));
 
-      // ── EmailJS Form Submission ─────────────────────────
+      // ── EmailJS v4 Form Submission ──────────────────────
       document
         .getElementById("applicationForm")
         .addEventListener("submit", function (e) {
@@ -2399,11 +2402,13 @@
           status.className = "form-status";
           status.textContent = "";
 
+          // ── EmailJS v4: pass publicKey as the 4th argument ──
           emailjs
             .sendForm(
-              "service_g6odf6v", // ← Dashboard → Email Services → Service ID
-              "template_vll4kji", // ← Dashboard → Email Templates → Template ID
-              this, // the <form> element — passes all name="…" fields automatically
+              "service_g6odf6v",   // ← Your EmailJS Service ID
+              "template_vll4kji",  // ← Your EmailJS Template ID
+              this,                // the <form> element
+              { publicKey: "yMYJ4ICVXc1mL1gDa" } // ← v4 requires this
             )
             .then(() => {
               // ✅ Success
@@ -2414,8 +2419,8 @@
               this.reset();
             })
             .catch((err) => {
-              // ❌ Error
-              console.error("EmailJS error:", err);
+              // ❌ Error — log full details to console for debugging
+              console.error("EmailJS error:", JSON.stringify(err));
               btn.disabled = false;
               btn.textContent = "Submit Application";
               status.className = "form-status error";
