@@ -273,7 +273,7 @@
       background-image: url("https://bayshore.nyc3.cdn.digitaloceanspaces.com/valkyrie_house/WhatsApp%20Image%202026-05-19%20at%205.43.42%20PM.jpeg");
       background-size: cover;
       background-position: center;
-      filter: grayscale(100%) brightness(0.32) contrast(1.1);
+      filter: brightness(0.5) contrast(1.05);
       transform: scale(1.05);
       animation: heroZoom 24s ease-in-out infinite alternate;
     }
@@ -745,7 +745,7 @@
     .split-image {
       background-size: cover;
       background-position: center;
-      filter: grayscale(100%) brightness(0.85);
+      filter: none;
       position: relative;
     }
 
@@ -754,6 +754,11 @@
       background-repeat: no-repeat;
       background-position: center;
       background-color: var(--black);
+      filter: none;
+    }
+
+    .split-image.full-image::after {
+      display: none;
     }
 
     .founder-split .split-image {
@@ -847,7 +852,7 @@
       object-position: center top;
       border: 1px solid rgba(232, 164, 197, 0.55);
       box-shadow: 0 0 0 4px rgba(232, 164, 197, 0.08);
-      filter: grayscale(100%) brightness(0.9) contrast(1.08);
+      filter: none;
     }
 
     .split-content .signature-copy {
@@ -1088,7 +1093,7 @@
       aspect-ratio: 4/5;
       background-size: cover;
       background-position: center;
-      filter: grayscale(100%) brightness(0.85);
+      filter: none;
       transition: all 0.7s ease;
       position: relative;
       overflow: hidden;
@@ -1105,7 +1110,7 @@
     }
 
     .gallery-item:hover {
-      filter: grayscale(70%) brightness(1);
+      filter: brightness(1.05);
       transform: scale(1.01);
     }
 
@@ -1240,7 +1245,7 @@
       background-image: url("https://images.unsplash.com/photo-1518562180175-34a163b1a9a6?w=1800&q=80");
       background-size: cover;
       background-position: center;
-      filter: grayscale(100%) brightness(0.28);
+      filter: brightness(0.45);
     }
 
     .cta-overlay {
