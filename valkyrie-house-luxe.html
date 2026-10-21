@@ -720,18 +720,16 @@
 
     .split-section {
       background: var(--black);
-      padding: 0;
+      padding: 110px 48px;
     }
 
     .split {
+      max-width: 1180px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: 640px;
-    }
-
-    .split.founder-split {
-      min-height: auto;
-      align-items: stretch;
+      gap: 80px;
+      align-items: center;
     }
 
     .split.reverse {
@@ -750,20 +748,19 @@
     }
 
     .split-image.full-image {
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: var(--black);
-      filter: none;
+      background: none;
+    }
+
+    .split-image.full-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      border: 1px solid var(--line2);
     }
 
     .split-image.full-image::after {
       display: none;
-    }
-
-    .founder-split .split-image {
-      height: 100%;
-      min-height: 0;
     }
 
     .split-image::after {
@@ -776,7 +773,7 @@
     }
 
     .split-content {
-      padding: 100px 70px;
+      padding: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -871,26 +868,18 @@
     }
 
     @media (max-width: 900px) {
+      .split-section {
+        padding: 80px 32px;
+      }
+
       .split {
+        max-width: 560px;
         grid-template-columns: 1fr;
+        gap: 48px;
       }
 
       .split.reverse {
         direction: ltr;
-      }
-
-      .split-image {
-        min-height: 380px;
-      }
-
-      .founder-split .split-image {
-        height: auto;
-        min-height: 0;
-        aspect-ratio: 4 / 3;
-      }
-
-      .split-content {
-        padding: 70px 32px;
       }
 
       .split-content .signature-avatar {
@@ -1751,21 +1740,18 @@
       }
 
       .mv-card,
-      .split-content,
       .service,
       .form-card {
         padding-left: 18px;
         padding-right: 18px;
       }
 
-      .split-image {
-        min-height: 280px;
+      .split-section {
+        padding: 64px 18px;
       }
 
-      .founder-split .split-image {
-        height: auto;
-        min-height: 0;
-        aspect-ratio: 4 / 3;
+      .split {
+        gap: 36px;
       }
 
       .split-content .signature {
@@ -2011,7 +1997,9 @@
 
   <section class="split-section">
     <div class="split founder-split">
-      <div class="split-image full-image" style="background-image: url(&quot;group-image.png&quot;)"></div>
+      <div class="split-image full-image">
+        <img src="group-image.png" alt="Painting of a woman choosing recovery" loading="lazy" />
+      </div>
       <div class="split-content">
         <div class="label">A letter from our founder</div>
         <h2>
@@ -2086,9 +2074,9 @@
 
   <section class="split-section">
     <div class="split reverse">
-      <div class="split-image full-image" style="
-            background-image: url(&quot;home.jpeg&quot;);
-          "></div>
+      <div class="split-image full-image">
+        <img src="home.jpeg" alt="Inside Valkyrie House: living room, kitchen, bedrooms and bathrooms" loading="lazy" />
+      </div>
       <div class="split-content">
         <div class="label">Why Valkyrie House</div>
         <h2>
